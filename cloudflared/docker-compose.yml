@@ -4,3 +4,9 @@ services:
     container_name: cloudflared
     restart: unless-stopped
     command: tunnel --no-autoupdate run --token ${TOKEN}
+    networks:
+      - cloudflared
+      
+networks:
+  cloudflared:
+    name: cloudflared
